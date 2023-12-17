@@ -4,7 +4,7 @@ resource "aws_instance" "web" {
     instance_type = "t2.medium"
     key_name = "ajay" #changeyourkeypair
     vpc_security_group_ids = [ aws_security_group.monitoring-sg.id ]
-    user_data = templatefile("./install.sh", {})
+    user_data = templatefile("./script.sh", {})
 
     tags = {
         name = "monitoring-servers"
